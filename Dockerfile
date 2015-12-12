@@ -32,12 +32,12 @@ ENV OAUTH_TOKEN_SECRET JFEaeFGGDeSHg3VQcccdI8Pfj7ghvnj67dh
 ENV MAX_CHART_SIZE 5000
 
 # What to look for
-ENV INCLUDE_TWITTER_HASH bigdata, devops, microservices
+ENV INCLUDE_TWITTER_HASH devops, microservices
 
 # The web ports
-ENV VCAP_APP_PORT 8080
+ENV PORT 8080
 
-# Expose ports (same as VCAP_APP_PORT)
+# Expose ports (same as PORT)
 EXPOSE 8080
 
 # Set the default directory where CMD will execute
