@@ -22,7 +22,7 @@ def sendToBubbles(data):
                 hashtags = [ tag['text'].encode('utf-8').lower() for tag in data['entities']['hashtags'] ]
 
                 if hashtags:
-                        r = requests.post(url='http://0.0.0.0:%d/bubbles/post' % int(os.getenv('PORT')),
+                        r = requests.post(url='http://0.0.0.0:%d/bubbles/post' % int(os.getenv('VCAP_APP_PORT')),
                                 data=json.dumps({'trends': hashtags }), headers={'Content-Type': 'application/json'})
         except Exception as e:
                 print 'Analysis error, found a problem parsing hashtag list: %s' % e
@@ -32,7 +32,7 @@ def sendToPie(data):
         try:
 		sentiment = computeSentiment(data)
 
-                r = requests.post(url='http://0.0.0.0:%d/pie/post' % int(os.getenv('PORT')),
+                r = requests.post(url='http://0.0.0.0:%d/pie/post' % int(os.getenv('VCAP_APP_PORT')),
                         data=json.dumps({'sentiment': sentiment }), headers={'Content-Type': 'application/json'})
         except Exception as e:
                 print 'Analysis error, found a problem parsing sentiment: %s' % e

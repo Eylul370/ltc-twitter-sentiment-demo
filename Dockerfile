@@ -16,7 +16,8 @@ RUN apt-get install -y tar git curl nano wget dialog net-tools build-essential
 # Install Python and Basic Python Tools
 RUN apt-get install -y python python-dev python-distribute python-pip
 
-ADD /ltc-twitter-sentiment-demo /ltc-twitter-sentiment-demo
+ADD . /ltc-twitter-sentiment-demo
+
 
 # Get pip to download and install requirements:
 RUN pip install -r /ltc-twitter-sentiment-demo/requirements.txt
@@ -32,12 +33,12 @@ ENV OAUTH_TOKEN_SECRET JFEaeFGGDeSHg3VQcccdI8Pfj7ghvnj67dh
 ENV MAX_CHART_SIZE 5000
 
 # What to look for
-ENV INCLUDE_TWITTER_HASH devops, microservices
+ENV INCLUDE_TWITTER_HASH bigdata, devops, microservices
 
 # The web ports
-ENV PORT 8080
+ENV VCAP_APP_PORT 8080
 
-# Expose ports (same as PORT)
+# Expose ports (same as VCAP_APP_PORT)
 EXPOSE 8080
 
 # Set the default directory where CMD will execute
