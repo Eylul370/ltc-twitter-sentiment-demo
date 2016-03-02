@@ -22,6 +22,7 @@ def sendToBubbles(data):
                 hashtags = [ tag['text'].encode('utf-8').lower() for tag in data['entities']['hashtags'] ]
 
                 if hashtags:
+			print "sendToBubbles: %s" % repr(hashtags)
                         r = requests.post(url='http://0.0.0.0:%d/bubbles/post' % int(os.getenv('PORT')),
                                 data=json.dumps({'trends': hashtags }), headers={'Content-Type': 'application/json'})
         except Exception as e:
@@ -57,14 +58,15 @@ class bubblestats:
                         self.trend_raw = []
                         self.trend_count = Counter()
                 else:
-                        self.trend_raw.extend(trends)
-                        self.trend_count = Counter( self.trend_raw )
-                        top20 = self.trend_count.most_common(20)
-                        self.trend_raw = []
-                        for tag, num in top20:
-                            for i in range(0, num):
-                                self.trend_raw.append(tag)
-                        self.trend_count = Counter( self.trend_raw )
+			self.trend_raw.extend(trends)
+			self.trend_count = Counter( self.trend_raw )
+			top20 = self.trend_count.most_common(20)
+			self.trend_raw = []
+			for tag, num in top20:
+				for i in range(0, num):
+					self.trend_raw.append(tag)
+			self.trend_count = Counter( self.trend_raw )
+
 
         def add(self, trends=[]):
                 # this lets the bubble chart grow bigger
