@@ -46,7 +46,7 @@ def post_bubbles():
 @worker.app.route('/metrics/field-value-counters/hashtags')
 def metric_counter():
         global BUBBLE_STATS
-        url = 'http://0.0.0.0:%d/metrics/field-value-counters/hashtags' % int(os.getenv('VCAP_APP_PORT'))
+        url = 'http://0.0.0.0:%d/metrics/field-value-counters/hashtags' % int(os.getenv('PORT'))
         return json.dumps({"name":"hashtags","links":[{"rel":"self","href": url}],"counts": BUBBLE_STATS.trend_count })
 
 @worker.app.route('/pie/post', methods=['POST'])
@@ -64,7 +64,7 @@ def post_pie():
 @worker.app.route('/metrics/field-value-counters/sentiment')
 def pie_metric_counter():
         global PIE_STATS
-        url = 'http://0.0.0.0:%d/metrics/field-value-counters/sentiment' % int(os.getenv('VCAP_APP_PORT'))
+        url = 'http://0.0.0.0:%d/metrics/field-value-counters/sentiment' % int(os.getenv('PORT'))
         return json.dumps({"name":"sentiment","links":[{"rel":"self","href": url}],"counts": PIE_STATS.sentiment_count })
 
 
