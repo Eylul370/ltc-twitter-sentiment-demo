@@ -13,7 +13,7 @@ PIE_STATS = analysis.piestats()
 # app routes: end points for the app's web interfaces
 #
 #---------------------------------------------------------------
-worker = cfworker.cfworker( port=int(os.getenv('VCAP_APP_PORT')) )
+worker = cfworker.cfworker( port=int(os.getenv('PORT')) )
 worker.app = Flask(__name__, static_url_path='')
 
 @worker.app.route('/')

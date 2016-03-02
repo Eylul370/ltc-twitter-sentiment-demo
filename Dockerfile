@@ -35,10 +35,10 @@ ENV MAX_CHART_SIZE 5000
 # What to look for
 ENV INCLUDE_TWITTER_HASH bigdata, devops, microservices
 
-# The web ports
-ENV VCAP_APP_PORT 8080
+# The web ports for Cloud Foundry
+ENV PORT 8080
 
-# Expose ports (same as VCAP_APP_PORT)
+# Expose ports (same as PORT)
 EXPOSE 8080
 
 # Set the default directory where CMD will execute
