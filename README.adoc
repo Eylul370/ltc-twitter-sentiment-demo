@@ -9,7 +9,7 @@ This application analyzes and streams sentiment from a Twitter hash tag. Its aim
 Obtain Twitter Application keys from https://apps.twitter.com
 
 To build you own Docker image from this demo it is recommended to create a DockerHub registry account, and create an automated build from a forked version of this repo.
-+
+
 . Fork this repo to your own GitHub account
 . Create a DockerHub registry account
 . Create an automated build of your forked repo: https://docs.docker.com/docker-hub/builds/
@@ -18,7 +18,7 @@ To build you own Docker image from this demo it is recommended to create a Docke
 == Execution
 
 Run this repo either as a standalone PCF app, or as a Docker image pushed to PCF.
-+
+
 . cf push -f manifest.yml 
 
 
