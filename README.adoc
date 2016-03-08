@@ -6,10 +6,9 @@ This application analyzes and streams sentiment from a Twitter hash tag. Its aim
 
 == Project SetUp
 
-. Obtain Twitter Application keys from https://apps.twitter.com
-
 To build you own Docker image from this demo it is recommended to create a DockerHub registry account, and create an automated build from a forked version of this repo.
 
+. Obtain Twitter Application keys from https://apps.twitter.com
 . Fork this repo to your own GitHub account
 . Create a link:https://hub.docker.com[DockerHub] registry account
 . Create an automated build of your forked repo: https://docs.docker.com/docker-hub/builds/
