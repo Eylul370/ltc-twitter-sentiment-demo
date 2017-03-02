@@ -19,7 +19,7 @@ RUN pip install -r /ltc-twitter-sentiment-demo/requirements.txt
 
 #Environment (Keys are fake and are replaced at runtime)
 # Bot keys
-ENV APP_KEY  LwInchdbrgzrfxOAerglOt5GieCgqsdsfdYE3U
+ENV APP_KEY  LwInchdbrgzrfxOAerglOt5GieCgqsdsfdYE3UV
 ENV APP_SECRET FJDjergerg5G8FergergLQViobcbergergSbBPdKvCwxU93JmOnIprtoeAimVLUXmyiM
 ENV OAUTH_TOKEN 292erge771e-kxy3bhFTergergl2Kktyzu8ukzyikPScaesrfbuayqgq7gGW
 ENV OAUTH_TOKEN_SECRET JFEaeFGGDeSHg3VQcccdI8Pfj7ghvnj67dh
